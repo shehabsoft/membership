@@ -1,0 +1,116 @@
+{
+  "name": "Member",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "civilId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "birthDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "pattern"],
+      "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "address1",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "address2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "salary",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "Gender",
+      "fieldValues": "MALE,FEMALE",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "memberFiles",
+      "otherEntityRelationshipName": "member",
+      "relationshipName": "memberFiles"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "membershipStatus",
+      "otherEntityRelationshipName": "member",
+      "relationshipValidateRules": "required",
+      "relationshipName": "membershipStatus",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "membershipCategory",
+      "otherEntityRelationshipName": "member",
+      "relationshipValidateRules": "required",
+      "relationshipName": "membershipCategory",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "membershipType",
+      "otherEntityRelationshipName": "member",
+      "relationshipValidateRules": "required",
+      "relationshipName": "membershipType",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "membershipLevel",
+      "otherEntityRelationshipName": "member",
+      "relationshipValidateRules": "required",
+      "relationshipName": "membershipLevel",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "member",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "membership",
+  "clientRootFolder": "membership",
+  "databaseType": "sql",
+  "changelogDate": "20210217095250"
+}
