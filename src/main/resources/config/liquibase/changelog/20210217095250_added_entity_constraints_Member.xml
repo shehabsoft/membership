@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <!--
+        Added the constraints for entity Member.
+    -->
+    <changeSet id="20210217095250-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="membership_status_id"
+                                 baseTableName="member"
+                                 constraintName="fk_member__membership_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="membership_status"/>
+
+        <addForeignKeyConstraint baseColumnNames="membership_category_id"
+                                 baseTableName="member"
+                                 constraintName="fk_member__membership_category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="membership_category"/>
+
+        <addForeignKeyConstraint baseColumnNames="membership_type_id"
+                                 baseTableName="member"
+                                 constraintName="fk_member__membership_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="membership_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="membership_level_id"
+                                 baseTableName="member"
+                                 constraintName="fk_member__membership_level_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="membership_level"/>
+
+    </changeSet>
+</databaseChangeLog>

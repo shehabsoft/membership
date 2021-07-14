@@ -1,0 +1,28 @@
+{
+  "name": "MembershipStatus",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "membership_status",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "membership",
+  "clientRootFolder": "membership",
+  "databaseType": "sql",
+  "changelogDate": "20210217095550"
+}

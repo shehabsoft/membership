@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <!--
+        Added the constraints for entity MemberFiles.
+    -->
+    <changeSet id="20210525124741-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="member_id"
+                                 baseTableName="member_files"
+                                 constraintName="fk_member_files__member_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="member"/>
+
+    </changeSet>
+</databaseChangeLog>
